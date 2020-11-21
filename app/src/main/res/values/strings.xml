@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TestTheToast</string>
+    <string name="built_in_str">Built In Toasts</string>
+    <string name="positive_str">Positive</string>
+    <string name="negative_str">Negative</string>
+    <string name="like_str">Like</string>
+    <string name="smile_str">Smile</string>
+    <string name="custom_toasts_str">Custom Toasts</string>
+    <string name="custom_str">Custom</string>
+    <string name="right_str">Right</string>
+    <string name="left_str">Left</string>
+    <string name="both_str">Both</string>
+    <string name="custom_blinking_str">Custom Blinking Toasts</string>
+    <string name="background_str">Background</string>
+    <string name="text_str">Text</string>
+    <string name="icons_str">Icons</string>
+    <string name="all_str">All</string>
 </resources>
