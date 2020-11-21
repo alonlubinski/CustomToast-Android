@@ -22,6 +22,7 @@ dependencies {
 ```
 
 ## Usage
+![](assets/CustomToastDemo.gif)
 
 ## License
 
