@@ -3,6 +3,10 @@
 [![](https://jitpack.io/v/alonlubinski/CustomToast-Android.svg)](https://jitpack.io/#alonlubinski/CustomToast-Android)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+A library for simple implementation of fully customizable toast and some built in toasts.<br>
+The toast can be designed by changing some attributes like background color, corner radius, text attributes, etc.<br>
+Extra feature is a blinking toast - you can decide which part of the toast will blink.
+
 ## Setup
 Step 1. Add it in your root build.gradle at the end of repositories:
 ```
@@ -66,28 +70,32 @@ Positive Toast:
 ```java                    
 
 CustomToast.init()
-	   .positiveToast(this, "This is positive toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
+	   .positiveToast(this, "This is positive toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE)
+	   .show();
 ```
 
 Negative Toast:
 ```java                    
 
 CustomToast.init()
-	   .negativeToast(this, "This is negative toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
+	   .negativeToast(this, "This is negative toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE)
+	   .show();
 ```
 
 Like Toast:
 ```java                    
 
 CustomToast.init()
-	   .likeToast(this, "This is like toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
+	   .likeToast(this, "This is like toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE)
+	   .show();
 ```
 
 Smile Toast:
 ```java                    
 
 CustomToast.init()
-	   .smileToast(this, "This is smile toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
+	   .smileToast(this, "This is smile toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE)
+	   .show();
 ```
 
 ## License
