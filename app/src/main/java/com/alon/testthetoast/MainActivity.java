@@ -59,22 +59,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.main_BTN_positive:
-                CustomToast.init().positiveToast(this, "This is positive toast!", CustomToast.LENGTH_LONG, CustomToast.LEFT_IMAGE).show();
+                CustomToast.init().positiveToast(this, "This is positive toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
                 break;
             case R.id.main_BTN_negative:
-                CustomToast.init().negativeToast(this, "This is negative toast!", CustomToast.LENGTH_LONG, CustomToast.LEFT_IMAGE).show();
+                CustomToast.init().negativeToast(this, "This is negative toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
                 break;
             case R.id.main_BTN_like:
-                CustomToast.init().likeToast(this, "This is like toast!", CustomToast.LENGTH_LONG, CustomToast.LEFT_IMAGE).show();
+                CustomToast.init().likeToast(this, "This is like toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
                 break;
             case R.id.main_BTN_smile:
-                CustomToast.init().smileToast(this, "This is smile toast!", CustomToast.LENGTH_LONG, CustomToast.LEFT_IMAGE).show();
+                CustomToast.init().smileToast(this, "This is smile toast!", CustomToast.LENGTH_SHORT, CustomToast.LEFT_IMAGE).show();
                 break;
             case R.id.main_BTN_custom:
                 CustomToast
                         .init()
                         .setContext(this)
                         .setMessage("This is custom toast")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.CYAN)
                         .setCornerRadius(30)
                         .setTextColor(Color.RED)
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .init()
                         .setContext(this)
                         .setMessage("Custom toast with right icon")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .init()
                         .setContext(this)
                         .setMessage("Custom toast with left icon")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setLeftIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -109,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .init()
                         .setContext(this)
                         .setMessage("Custom toast with right and left icons")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -120,7 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CustomToast
                         .init()
                         .setContext(this)
-                        .setMessage("Custom blinking toast")
+                        .setMessage("Custom background blinking toast")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -133,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CustomToast
                         .init()
                         .setContext(this)
-                        .setMessage("Custom blinking toast")
+                        .setMessage("Custom text blinking toast")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -146,7 +152,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CustomToast
                         .init()
                         .setContext(this)
-                        .setMessage("Custom blinking toast")
+                        .setMessage("Custom icons blinking toast")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
@@ -160,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .init()
                         .setContext(this)
                         .setMessage("Custom blinking toast")
+                        .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
                         .setTextColor(Color.WHITE)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
