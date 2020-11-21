@@ -1,4 +1,4 @@
-# CustomToast-Android
+# CustomToast
 
 [![](https://jitpack.io/v/alonlubinski/CustomToast-Android.svg)](https://jitpack.io/#alonlubinski/CustomToast-Android)
 
