@@ -7,7 +7,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -148,12 +147,11 @@ public class CustomToast {
     }
 
     /**
-     *
-     * @param color The blinking color to use.
+     * @param color    The blinking color to use.
      * @param interval The interval time of blinking.
      * @return CustomToast
      */
-    public CustomToast setBackgroundBlink(int color, int interval){
+    public CustomToast setBackgroundBlink(int color, int interval) {
         this.backgroundBlinkColor = color;
         this.backgroundBlinkInterval = interval;
         this.backgroundBlink = true;
@@ -161,12 +159,11 @@ public class CustomToast {
     }
 
     /**
-     *
-     * @param color The blinking color to use.
+     * @param color    The blinking color to use.
      * @param interval The interval time of blinking.
      * @return CustomToast
      */
-    public CustomToast setTextBlink(int color, int interval){
+    public CustomToast setTextBlink(int color, int interval) {
         this.textBlinkColor = color;
         this.textBlinkInterval = interval;
         this.textBlink = true;
@@ -174,13 +171,12 @@ public class CustomToast {
     }
 
     /**
-     *
-     * @param color The blinking color to use.
-     * @param color2 The second blinking color to use.
+     * @param color    The blinking color to use.
+     * @param color2   The second blinking color to use.
      * @param interval The interval time of blinking.
      * @return CustomToast
      */
-    public CustomToast setIconBlink(int color, int color2, int interval){
+    public CustomToast setIconBlink(int color, int color2, int interval) {
         this.iconBlinkColor = color;
         this.iconBlinkColor2 = color2;
         this.iconBlinkInterval = interval;
@@ -214,17 +210,17 @@ public class CustomToast {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setTint(backgroundColor);
         gradientDrawable.setCornerRadius(cornerRadius);
-        if(backgroundBlink){
+        if (backgroundBlink) {
             startBlink(gradientDrawable, "tint", backgroundBlinkInterval, backgroundBlinkColor, backgroundColor).start();
         }
-        if(textBlink){
+        if (textBlink) {
             startBlink(toastText, "textColor", textBlinkInterval, textBlinkColor, textColor).start();
         }
-        if(iconBlink){
-            if(rightIcon){
+        if (iconBlink) {
+            if (rightIcon) {
                 startBlink(rightImage, "colorFilter", iconBlinkInterval, iconBlinkColor, iconBlinkColor2).start();
             }
-            if(leftIcon){
+            if (leftIcon) {
                 startBlink(leftImage, "colorFilter", iconBlinkInterval, iconBlinkColor, iconBlinkColor2).start();
             }
         }
@@ -234,15 +230,14 @@ public class CustomToast {
     }
 
     /**
-     *
-     * @param object The blinking object.
-     * @param prop The blinking object's prop.
+     * @param object   The blinking object.
+     * @param prop     The blinking object's prop.
      * @param interval The blinking interval.
-     * @param color The first blinking color.
-     * @param color2 The second blinking color.
+     * @param color    The first blinking color.
+     * @param color2   The second blinking color.
      * @return ObjectAnimator
      */
-    private ObjectAnimator startBlink(Object object, String prop, int interval, int color, int color2){
+    private ObjectAnimator startBlink(Object object, String prop, int interval, int color, int color2) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofInt(object, prop, color, color2);
         objectAnimator.setDuration(interval);
         objectAnimator.setEvaluator(new ArgbEvaluator());
@@ -267,9 +262,9 @@ public class CustomToast {
         setDuration(duration);
         setBackgroundColor(ContextCompat.getColor(context, R.color.light_green));
         setTextColor(Color.WHITE);
-        if(side == RIGHT_IMAGE)
+        if (side == RIGHT_IMAGE)
             setRightIcon(AppCompatResources.getDrawable(context, R.drawable.ic_success));
-        else if(side == LEFT_IMAGE)
+        else if (side == LEFT_IMAGE)
             setLeftIcon(AppCompatResources.getDrawable(context, R.drawable.ic_success));
         return buildToast();
     }
@@ -290,15 +285,14 @@ public class CustomToast {
         setDuration(duration);
         setBackgroundColor(ContextCompat.getColor(context, R.color.medium_red));
         setTextColor(Color.WHITE);
-        if(side == RIGHT_IMAGE)
+        if (side == RIGHT_IMAGE)
             setRightIcon(AppCompatResources.getDrawable(context, R.drawable.ic_fail));
-        else if(side == LEFT_IMAGE)
+        else if (side == LEFT_IMAGE)
             setLeftIcon(AppCompatResources.getDrawable(context, R.drawable.ic_fail));
         return buildToast();
     }
 
     /**
-     *
      * @param context  The context to use.  Usually your {@link android.app.Application}
      *                 or {@link android.app.Activity} object.
      * @param message  The message to show in your negative toast.
@@ -308,28 +302,38 @@ public class CustomToast {
      *                 {@link #LEFT_IMAGE}
      * @return Like toast with custom message.
      */
-    public Toast likeToast(Context context, String message, int duration, int side){
+    public Toast likeToast(Context context, String message, int duration, int side) {
         setContext(context);
         setMessage(message);
         setDuration(duration);
         setBackgroundColor(ContextCompat.getColor(context, R.color.light_blue));
         setTextColor(Color.WHITE);
-        if(side == RIGHT_IMAGE)
+        if (side == RIGHT_IMAGE)
             setRightIcon(AppCompatResources.getDrawable(context, R.drawable.ic_like));
-        else if(side == LEFT_IMAGE)
+        else if (side == LEFT_IMAGE)
             setLeftIcon(AppCompatResources.getDrawable(context, R.drawable.ic_like));
         return buildToast();
     }
 
-    public Toast smileToast(Context context, String message, int duration, int side){
+    /**
+     * @param context  The context to use.  Usually your {@link android.app.Application}
+     *                 or {@link android.app.Activity} object.
+     * @param message  The message to show in your negative toast.
+     * @param duration How long to display the message.  Either {@link #LENGTH_SHORT} or
+     *                 {@link #LENGTH_LONG}
+     * @param side     The side to show the icon.  Either {@link #RIGHT_IMAGE} or
+     *                 {@link #LEFT_IMAGE}
+     * @return Smile toast with custom message.
+     */
+    public Toast smileToast(Context context, String message, int duration, int side) {
         setContext(context);
         setMessage(message);
         setDuration(duration);
         setBackgroundColor(Color.BLACK);
         setTextColor(Color.YELLOW);
-        if(side == RIGHT_IMAGE)
+        if (side == RIGHT_IMAGE)
             setRightIcon(AppCompatResources.getDrawable(context, R.drawable.ic_smile));
-        else if(side == LEFT_IMAGE)
+        else if (side == LEFT_IMAGE)
             setLeftIcon(AppCompatResources.getDrawable(context, R.drawable.ic_smile));
         return buildToast();
     }

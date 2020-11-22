@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.alon.customtoast.CustomToast;
 
@@ -114,7 +113,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setMessage("Custom toast with right and left icons")
                         .setDuration(CustomToast.LENGTH_SHORT)
                         .setBackgroundColor(Color.BLUE)
+                        .setCornerRadius(30)
                         .setTextColor(Color.WHITE)
+                        .setTextSize(20)
                         .setRightIcon(getResources().getDrawable(R.drawable.ic_android))
                         .setLeftIcon(getResources().getDrawable(R.drawable.ic_android))
                         .buildToast()
